@@ -23,6 +23,7 @@ npx npgsqlrest
 
 ### Docker
 ```bash
+# Requires appsettings.json with connection configuration
 docker run -p 8080:8080 -v ./appsettings.json:/app/appsettings.json vbilopav/npgsqlrest:latest
 ```
 
@@ -50,7 +51,12 @@ comment on function hello(text) is 'HTTP GET /hello';
 }
 ```
 
-3. **Run the server** and access your API at `http://localhost:8080/hello?name=World`
+3. **Run the server:**
+```bash
+npx npgsqlrest  # or use Docker/dotnet run
+```
+
+4. **Access your API** at `http://localhost:8080/hello?name=World`
 
 ## 📚 Documentation & Resources
 
